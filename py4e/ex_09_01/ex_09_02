@@ -1,0 +1,24 @@
+f=open('intro.txt')
+#for line in f:
+#    line = line.rstrip()
+#    print(line)
+#    wds = line.split()
+#    print(wds)
+
+inp = f.read().split()
+#print(inp)
+
+counts = dict()
+words = inp
+bv=-1
+#print(words)
+for word in words:
+    counts[word] = counts.get(word,0) +1
+    if bv < counts[word]:
+        bv = counts[word]
+        bk=word
+#print(counts)
+
+for k,v in counts.items():
+    print(k,v)
+print(bk,bv)
